@@ -1,18 +1,18 @@
 $(function() {
 	$("#assemble").click(function(){
-		assembly = $("#assembly").val();
-		linesOfCode = assembly.split("\n");
-		machineCode = "";
+		assembly = $("#assembly").val(); // gets the value of the textarea for the assembly code
+		linesOfCode = assembly.split("\n"); // creates an array of each line of assembly
+		machineCode = ""; 
 		returnCode = [];
 		linesOfCode.forEach(function(line){
-			re = new RegExp(/\s+/);
-			code = line.split(re);
-			opCode = getOpCode(code[0]);
+			re = new RegExp(/\s+/); // regex for one or more spaces
+			code = line.split(re); // split each line of code by the spaces to get each separate 'word'
+			opCode = getOpCode(code[0]); // attempt to get the corresponding opcode for the first 'word'
 			if (opCode === "error")
 			{
 				alert("Invalid operation")
 			}
-			if (opCode === "111")
+			if (opCode === "111") // the rest of the output is 0s if you get HALT opcode
 			{
 				numberBit = "0";
 				binary = "000000"
@@ -21,7 +21,7 @@ $(function() {
 			{
 				numberBit = getNumberBit(code[1]);
 				number = code[1];
-				if (numberBit == 1)
+				if (numberBit == 1) // get the operand
 				{
 					number = code[1].substring(1);
 				}
@@ -29,12 +29,12 @@ $(function() {
 				{
 					alert("Operand out of bounds");
 				}
-				binary = dec2Bin(number);
+				binary = dec2Bin(number); // convert to the operand to binary
 			}
-			returnCode.push(opCode + " " + numberBit + " " + binary);
+			returnCode.push(opCode + " " + numberBit + " " + binary); // add the string for this line of code to the array
 		});
-		machineCode = returnCode.join("\n");
-		$("#machine").val(machineCode);
+		machineCode = returnCode.join("\n"); // join the array into a single string separated by new lines
+		$("#machine").val(machineCode); // add the machine to the appropriate textarea
 	});
 });
 
@@ -67,10 +67,10 @@ function getOpCode(str)
 	}
 }
 
-function dec2Bin(dec, bits)
+function dec2Bin(dec)
 {
-	binstr = (dec >>> 0).toString(2);
-	while(binstr.length < 6) {
+	binstr = (dec >>> 0).toString(2); // convert decimal to binary
+	while(binstr.length < 6) { // pad with 0s to make it 6 bits
 		binstr = "0" + binstr;
 	}
     return binstr;
