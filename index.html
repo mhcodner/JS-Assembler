@@ -12,16 +12,19 @@
 			<h1 class="page-header">Simple Assembler</h1>
 			<div class="row">
 				<div class="half-width">
-					<div class="input-field">
-						<label for="assembly">Assembly Language Code</label>
-						<textarea id="assembly"></textarea>
-					</div>
+					<label for="assembly">Assembly Language Code</label>
+					<textarea id="assembly">LOAD #2
+STORE 13
+LOAD #5
+STORE 14
+LOAD 13
+ADD 14
+STORE 15
+HALT</textarea>
 				</div>
 				<div class="half-width">
-					<div class="input-field">
-						<label for="machine">Machine Language Code</label>
-						<textarea id="machine"></textarea>
-					</div>
+					<label for="machine">Machine Language Code</label>
+					<textarea id="machine"></textarea>
 				</div>
 			</div>
 			<button id="assemble">Assemble</button>

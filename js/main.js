@@ -5,7 +5,8 @@ $(function() {
 		machineCode = "";
 		returnCode = [];
 		linesOfCode.forEach(function(line){
-			code = line.split(" +");
+			re = new RegExp(/\s+/);
+			code = line.split(re);
 			opCode = getOpCode(code[0]);
 			if (opCode === "error")
 			{
