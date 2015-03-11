@@ -8,26 +8,26 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>
+		<div class="container">
+			<h1 class="center">Simple Assembler</h1>
+			<table>
+				<thead>
+					<th>Assembly Language Code</th>
+					<th>Machine Language Code</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td><textarea id="assembly"></textarea></td>
+						<td><textarea id="machine"></textarea></td>
+					</tr>
+					<tr colspan="2">
+						<td><button id="assemble">Assemble</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-		<h1 class="center">Simple Assembler</h1>
-
-		<table>
-			<thead>
-				<th>Assembly Language Code</th>
-				<th>Machine Language Code</th>
-			</thead>
-			<tbody>
-				<tr>
-					<td><textarea id="assembly"></textarea></td>
-					<td><textarea id="machine"></textarea></td>
-				</tr>
-				<tr colspan="2">
-					<td><button id="assemble">Assemble</button></td>
-				</tr>
-			</tbody>
-		</table>
-
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
