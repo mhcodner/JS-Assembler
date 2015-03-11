@@ -5,7 +5,7 @@ $(function() {
 		machineCode = "";
 		returnCode = [];
 		linesOfCode.forEach(function(line){
-			code = line.split(" ");
+			code = line.split(" +");
 			opCode = getOpCode(code[0]);
 			if (opCode === "error")
 			{
@@ -39,8 +39,7 @@ $(function() {
 
 function getNumberBit(code)
 {
-	result = code.contains("#") ? 1 : 0;
-	return result;
+	return code.contains("#") ? 1 : 0;
 }
 
 function getOpCode(str)
