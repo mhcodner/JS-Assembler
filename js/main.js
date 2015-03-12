@@ -41,14 +41,7 @@ $(function() {
 
 function getNumberBit(code)
 {
-	if (code.contains("#"))
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+	return (code.indexOf("#") > -1) ? 1 : 0;
 }
 
 function getOpCode(str)
