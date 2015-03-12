@@ -8,6 +8,7 @@ $(function() {
 			re = new RegExp(/\s+/); // regex for one or more spaces
 			code = line.split(re); // split each line of code by the spaces to get each separate 'word'
 			opCode = getOpCode(code[0]); // attempt to get the corresponding opcode for the first 'word'
+			alert(code[0] + "\n" + code[1] + "\n" + opCode + "\n" + getNumberBit(code[1]));
 			if (opCode === "error")
 			{
 				alert("Invalid operation")
