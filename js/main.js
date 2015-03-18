@@ -3,7 +3,7 @@ function assemble(){
 	linesOfCode = assembly.split("\n"); // creates an array of each line of assembly
 	machineCode = ""; 
 	returnCode = [];
-	$.each(linesOfCode, function(i, line){
+	linesOfCode.forEach(function(line, i){
 		re = new RegExp(/\s+/); // regex for one or more spaces
 		code = line.split(re); // split each line of code by the spaces to get each separate 'word'
 		opCode = getOpCode(code[0]); // attempt to get the corresponding opcode for the first 'word'
